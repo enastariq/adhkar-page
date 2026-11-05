@@ -1,0 +1,226 @@
+:root {
+  --bg-page: #f5f2eb;       /* Soft off-white background */
+  --tone-light: #e2dfd7;    /* Warm light grey bubble */
+  --tone-mid: #d3cec4;      /* Medium stone bubble */
+  --tone-beige: #dfd3be;    /* Warm sandy beige bubble */
+  --tone-dark: #b4a99e;     /* Deeper taupe bubble */
+  --text-main: #2c2623;     /* Deep charcoal-brown text */
+  --title-color: #6e6259;   /* Muted brown calligraphy title */
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: var(--bg-page);
+  color: var(--text-main);
+  font-family: 'Amiri', serif;
+  padding: 24px 12px 40px;
+  max-width: 820px;
+  margin: 0 auto;
+}
+
+header {
+  text-align: center;
+  margin-bottom: 24px;
+}
+
+/* Main Title with the beige brushstroke bar behind it */
+.page-title {
+  font-family: 'Aref Ruqaa', serif;
+  font-size: clamp(2.2rem, 8vw, 3.8rem);
+  color: var(--title-color);
+  display: inline-block;
+  padding: 0 18px;
+  font-weight: 700;
+  /* Creates the soft rectangular bar behind the middle of the title */
+  background: linear-gradient(
+    to bottom,
+    transparent 42%,
+    #e5dec9 42%,
+    #e5dec9 78%,
+    transparent 78%
+  );
+}
+/* 2 Columns on Phone (Default) */
+.bubbles-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+  align-items: stretch;
+}
+
+/* 3 Columns on Tablet & Desktop */
+@media (min-width: 680px) {
+  .bubbles-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+  }
+}
+
+/* Base Bubble Button */
+.bubble {
+  appearance: none;
+  border: none;
+  font-family: 'Amiri', serif;
+  color: var(--text-main);
+  font-size: clamp(0.95rem, 3.4vw, 1.18rem);
+  line-height: 1.65;
+  padding: 20px 14px;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  /* Organic hand-drawn bubble curve */
+  border-radius: 38px 46px 40px 44px / 34px 42px 38px 46px;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.04);
+  transition: transform 0.2s ease, box-shadow 0.2s ease, outline 0.2s ease;
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* Slight curve variations so bubbles feel natural */
+.bubble:nth-child(even) {
+  border-radius: 46px 36px 44px 38px / 40px 34px 46px 36px;
+}
+
+.bubble:nth-child(3n) {
+  border-radius: 40px 48px 36px 46px / 44px 38px 42px 34px;
+}
+/* 2 Columns on Phone (Default) */
+.bubbles-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+  align-items: stretch;
+}
+
+/* 3 Columns on Tablet & Desktop */
+@media (min-width: 680px) {
+  .bubbles-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+  }
+}
+
+/* Base Bubble Button */
+.bubble {
+  appearance: none;
+  border: none;
+  font-family: 'Amiri', serif;
+  color: var(--text-main);
+  font-size: clamp(0.95rem, 3.4vw, 1.18rem);
+  line-height: 1.65;
+  padding: 20px 14px;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  /* Organic hand-drawn bubble curve */
+  border-radius: 38px 46px 40px 44px / 34px 42px 38px 46px;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.04);
+  transition: transform 0.2s ease, box-shadow 0.2s ease, outline 0.2s ease;
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* Slight curve variations so bubbles feel natural */
+.bubble:nth-child(even) {
+  border-radius: 46px 36px 44px 38px / 40px 34px 46px 36px;
+}
+
+.bubble:nth-child(3n) {
+  border-radius: 40px 48px 36px 46px / 44px 38px 42px 34px;
+}
+/* Poster Color Tones */
+.tone-light { background-color: var(--tone-light); }
+.tone-mid   { background-color: var(--tone-mid); }
+.tone-beige { background-color: var(--tone-beige); }
+.tone-dark  { background-color: var(--tone-dark); }
+
+/* Top Ribbon Pills (آية الكرسي & المعوذات) */
+.bubble.ribbon {
+  border-radius: 12px;
+  padding: 12px 14px;
+  font-weight: 700;
+  font-size: clamp(1rem, 3.6vw, 1.25rem);
+}
+
+/* Bottom Counter Badges */
+.bubble.bottom-badge {
+  border-radius: 16px;
+  padding: 14px 12px;
+  font-size: clamp(0.9rem, 3.2vw, 1.1rem);
+  line-height: 1.5;
+}
+
+/* Repetition Count Text (e.g., - ثلاث مرات -) */
+.count {
+  display: block;
+  margin-top: 8px;
+  font-weight: 700;
+  font-size: 0.92em;
+}
+
+/* Hover & Active Playing State (Used in Step 3 JS) */
+.bubble:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.09);
+}
+
+.bubble.is-playing {
+  outline: 3px solid #6e6259;
+  box-shadow: 0 0 0 5px rgba(110, 98, 89, 0.2);
+  transform: scale(0.98);
+}
+/* Corner Toggle Container */
+.mode-toggle {
+  position: fixed;
+  top: 14px;
+  left: 14px;
+  z-index: 100;
+  display: inline-flex;
+  background-color: var(--tone-mid);
+  padding: 4px;
+  border-radius: 999px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+}
+
+/* Individual Toggle Buttons (الصباح / المساء) */
+.mode-btn {
+  appearance: none;
+  border: none;
+  background: transparent;
+  color: var(--text-main);
+  font-family: 'Amiri', serif;
+  font-size: 0.95rem;
+  font-weight: 700;
+  padding: 5px 14px;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: background-color 0.25s ease, color 0.25s ease;
+}
+
+/* Active Mode Pill */
+.mode-btn.active {
+  background-color: #6e6259;
+  color: #f5f2eb;
+}
+
+/* Smooth transition for the swapped words */
+.time-word {
+  font-weight: 700;
+  transition: opacity 0.2s ease;
+}
+
+/* Extra top padding on mobile so the corner button doesn't overlap the title */
+@media (max-width: 600px) {
+  body {
+    padding-top: 60px;
+  }
+}

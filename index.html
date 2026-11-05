@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>أذكار الصباح والمساء</title>
+  
+  <!-- Arabic Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Aref+Ruqaa:wght@700&display=swap" rel="stylesheet">
+  
+  <!-- Link to our CSS file -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Corner Mode Toggle (Morning / Evening) -->
+  <div class="mode-toggle" id="modeToggle" role="group" aria-label="تبديل بين الصباح والمساء">
+    <button type="button" class="mode-btn active" data-mode="morning">الصباح ☀️</button>
+    <button type="button" class="mode-btn" data-mode="evening">المساء 🌙</button>
+  </div>
+  <!-- Main Header -->
+  <header>
+    <h1 class="page-title">أذكار الصباح والمساء</h1>
+  </header>
+
+  <!-- Main Grid Container for All Bubbles -->
+  <main class="bubbles-grid">
+
+    <!-- 1. Top Right Ribbon 1 (Quranic Verses) -->
+    <button class="bubble ribbon tone-light" data-audio="audio/ayat-alkursi.mp3">
+      <p>آية الكرسي </p>
+    </button>
+
+    <!-- 2. Top Right Ribbon 2 (Al-Mu'awwidhat) -->
+    <button class="bubble ribbon tone-mid" data-audio="audio/muawwidhat.mp3">
+      <p>المعوذات</p>
+    </button>
+
+    <!-- 3. Right Column - Bubble 1 (Morning/Evening Sovereignty) -->
+    <button class="bubble tone-light" 
+            data-audio="audio/asbahna.mp3" 
+            data-audio-evening="audio/amsayna.mp3">
+      <p>
+        <span class="time-word" data-morning="أصبحنا وأصبح" data-evening="أمسينا وأمسى">أصبحنا وأصبح</span>
+        الملك لله، والحمد لله، لا إله إلا الله وحده لا شريك له، له الملك وله الحمد وهو على كل شيء قدير
+      </p>
+    </button>
+
+    <!-- 4. Middle Column - Bubble 1 (Protection in Allah's Name) -->
+    <button class="bubble tone-mid" data-audio="audio/bismellah.mp3">
+      <p>بسم الله الذي لا يضر مع اسمه شيء في الأرض ولا في السماء وهو السميع العليم</p>
+      <span class="count">- ثلاث مرات -</span>
+    </button>
+
+    <!-- 5. Left Column - Bubble 1 (Tasbih & Praise) -->
+    <button class="bubble tone-mid" data-audio="audio/subhanallah.mp3">
+      <p>سبحان الله وبحمده: عدد خلقه، ورضا نفسه، وزنة عرشه، ومداد كلماته</p>
+      <span class="count">- ثلاث مرات -</span>
+    </button>
+
+    <!-- 6. Right Column - Bubble 2 (Sayyid al-Istighfar) -->
+    <button class="bubble tone-mid" data-audio="audio/sayyid-alistighfar.mp3">
+      <p>اللهم أنت ربي لا إله إلا أنت، خلقتني وأنا عبدك، وأنا على عهدك ووعدك ما استطعت، أعوذ بك من شر ما صنعت، أبوء لك بنعمتك علي، وأبوء بذنبي فاغفر لي فإنه لا يغفر الذنوب إلا أنت</p>
+    </button>
+
+    <!-- 7. Middle Column - Bubble 2 (Bearing Witness) -->
+    <button class="bubble tone-beige" 
+            data-audio="audio/ashhaduka-morning.mp3" 
+            data-audio-evening="audio/ashhaduka-evening.mp3">
+      <p>
+        اللهم إني
+        <span class="time-word" data-morning="أصبحت" data-evening="أمسيت">أصبحت</span>
+        أشهدك، وأشهد حملة عرشك، وملائكتك، وجميع خلقك، أنك أنت الله لا إله إلا أنت وحدك لا شريك لك، وأن محمدا عبدك ورسولك
+      </p>
+      <span class="count">- أربع مرات -</span>
+    </button>
+
+    <!-- 8. Left Column - Bubble 2 (Tahlil - 100 times) -->
+    <button class="bubble tone-dark" data-audio="audio/lailahilaallah2.mp3">
+      <p>لا إله إلا الله وحده لا شريك له، له الملك وله الحمد، وهو على كل شيء قدير</p>
+      <span class="count">- مائة مرة -</span>
+    </button>
+
+    <!-- 9. Right Column - Bubble 3 (Well-being in Body, Hearing & Sight) -->
+    <button class="bubble tone-beige" data-audio="audio/aafini.mp3">
+      <p>اللهم عافني في بدني، اللهم عافني في سمعي، اللهم عافني في بصري، لا إله إلا أنت. اللهم إني أعوذ بك من الكفر، والفقر، وأعوذ بك من عذاب القبر، لا إله إلا أنت</p>
+      <span class="count">- ثلاث مرات -</span>
+    </button>
+
+    <!-- 10. Middle Column - Bubble 3 (Gratitude for Blessings) -->
+    <button class="bubble tone-light" 
+            data-audio="audio/ma-asbaha-bi.mp3" 
+            data-audio-evening="audio/ma-amsa-bi.mp3">
+      <p>
+        اللهم ما
+        <span class="time-word" data-morning="أصبح" data-evening="أمسى">أصبح</span>
+        بي من نعمة أو بأحد من خلقك فمنك وحدك لا شريك لك، فلك الحمد ولك الشكر
+      </p>
+    </button>
+
+    <!-- 11. Left Column - Bubble 3 (Pleased with Allah, Islam & the Prophet) -->
+    <button class="bubble tone-beige" data-audio="audio/raditu-billah.mp3">
+      <p>رضيت بالله ربا، وبالإسلام دينا، وبمحمد صلى الله عليه وسلم نبيا</p>
+      <span class="count">- ثلاث مرات -</span>
+    </button>
+
+    <!-- 12. Right Column - Bubble 4 (Pardon & Protection in All Directions) -->
+    <button class="bubble tone-mid" data-audio="audio/asaluka-alafwa.mp3">
+      <p>اللهم إني أسألك العفو والعافية في الدنيا والآخرة، اللهم إني أسألك العفو والعافية في ديني ودنياي وأهلي ومالي، اللهم استر عوراتي، وآمن روعاتي، اللهم احفظني من بين يدي، ومن خلفي، وعن يميني، وعن شمالي، ومن فوقي، وأعوذ بعظمتك أن أغتال من تحتي</p>
+    </button>
+
+    <!-- 13. Middle Column - Bubble 4 (Sufficiency in Allah) -->
+    <button class="bubble tone-dark" data-audio="audio/hasbiya-allah.mp3">
+      <p>حسبي الله لا إله إلا هو عليه توكلت وهو رب العرش العظيم</p>
+      <span class="count">- سبع مرات -</span>
+    </button>
+
+    <!-- 14. Left Column - Bubble 4 (Seeking Aid through Allah's Mercy) -->
+    <button class="bubble tone-light" data-audio="audio/ya-hayyu-ya-qayyum.mp3">
+      <p>يا حي ياقيوم برحمتك أستغيث أصلح لي شأني كله ولا تكلني إلى نفسي طرفة عين</p>
+    </button>
+
+    <!-- 15. Bottom Bar - Right Badge (Refuge in Allah's Perfect Words) -->
+    <button class="bubble bottom-badge tone-beige" data-audio="audio/audhu-bikalimatillah.mp3">
+      <p>أعوذ بكلمات الله التامات من شر ما خلق</p>
+      <span class="count">٣ مرات</span>
+    </button>
+
+    <!-- 16. Bottom Bar - Left Badge (Daily 100x Tasbih, Istighfar, Tahmid) 
+    <button class="bubble bottom-badge tone-beige" data-audio="audio/tasbih-100.mp3">
+      <p>سبحان الله - ١٠٠ مرة<br>استغفر الله - ١٠٠ مرة<br>الحمدلله - ١٠٠ مرة</p>
+    </button>-->
+
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
