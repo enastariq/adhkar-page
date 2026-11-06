@@ -78,8 +78,18 @@ bubbles.forEach((bubble) => {
       activeBubble = null;
     });
 
+    // Check if this specific bubble has data-repeat="50" (all others default to 1)
+    let playCount = 1;
+    const maxRepeats = Number(bubble.dataset.repeat) || 1;
+
     currentAudio.addEventListener('ended', () => {
-      stopCurrentAudio();
+      if (playCount < maxRepeats) {
+        playCount++;
+        currentAudio.currentTime = 0; // Rewind to start
+        currentAudio.play();          // Play again
+      } else {
+        stopCurrentAudio();           // Done! Remove highlight
+      }
     });
   });
 });
